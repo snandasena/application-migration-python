@@ -29,4 +29,8 @@ source <path to pvm bin active > # source /tmp/pvm_test/bin/activate
 python -m pip install <package names> # python -m pip install requests
 ```
 
+###### Note: For Python3 version please use interpreter arguments to install packages and please don't use pip arguments
+
+`Better method: python -m pip install requests`  
+`Not good for some packages : pip install requests`
 
