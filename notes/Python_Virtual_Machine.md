@@ -23,6 +23,10 @@ source <path to pvm bin active > # source /tmp/pvm_test/bin/activate
 ##### Summary outputs
 ![](../images/vmcreate.png)
 
-#### How to install packages in PVM
+#### How to install [packages](https://pypi.org/search/) in PVM
+
+```bash
+python -m pip install <package names> # python -m pip install requests
+```
 
 
