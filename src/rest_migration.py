@@ -7,16 +7,18 @@ import math
 import requests
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(message)s', datefmt='%d-%b-%y %H:%M:%S',
-                    filename='../logs/vasabi-migrate.log', filemode='w')
+                    filename='../logs/rest-migrate.log', filemode='w')
 
 vasabi_root = 'https://run.mocky.io/'
+
 wallet_root = "https://run.mocky.io/"
 
 vasabi_headers = {'Content-type': 'application/json'}
+
 wallet_headers = {'Content-type': 'application/json'}
 
-vasabi_username = 'wallet'
-vasabi_password = 'rg@#45FEs'
+vasabi_username = 'tdte'
+vasabi_password = 'vcbcbvcbcvb'
 
 wallet_username = 'test'
 wallet_password = 'test'
@@ -78,9 +80,11 @@ def process(row_data, worker_id):
             print(create_wal_cus_res)
             if 'isActive' in create_wal_cus_res or 'description' in create_wal_cus_res:
                 if 'isActive' in create_wal_cus_res:
+
                     log_message = str(data[0]) + ' | ' + str(data[1]) + ' | ' + str(
                         data[2]) + '| {} | {}'.format(
                         wallet_customer_creation, create_wal_cus_res['isActive'])
+
                     logging.info(log_message)
 
                 if 'description' in create_wal_cus_res:
@@ -91,6 +95,7 @@ def process(row_data, worker_id):
                     logging.info(log_message)
 
             create_wallet_customer_queue.append(data)
+
             total_t_tasks = total_t_tasks + 1
 
         print("worker[{}] total create_wallet_customer tasks : {}".format(worker_id, total_t_tasks))
